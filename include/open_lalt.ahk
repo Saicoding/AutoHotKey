@@ -187,9 +187,11 @@
 ;==================================>剪切
 <!f::
 {
-	if(is_it_by_title("- Visual Studio Code") || is_it_by_class("SunAwtFrame")||is_it_by_class("Vim")){
+	if(is_it_by_title("- Visual Studio Code") ||is_it_by_class("Vim")){
 		sendevent !f
 		return
+	}else if(is_it_by_class("SunAwtFrame")){
+		SendEvent +{Esc}
 	}else{
 		SendEvent ^c
 	}
@@ -286,10 +288,7 @@
 	if(is_it_by_title("- Visual Studio Code") ||is_it_by_class("SunAwtFrame") ){
 		sendevent !n
 		return
-	}else{
-		toogleDir("回收站","回收站")
 	}
-	return
 }
 
 ;==================================>onedrive
